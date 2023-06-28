@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 from dash.dependencies import Input, Output
 
-data = pd.read_csv(r'C:\\data.csv') 
+data = pd.read_csv('https://raw.githubusercontent.com/ngocanhjs/lancuoi/main/data.csv') 
 
 df = data['MAIN_PRODUCTION'].value_counts()
 
@@ -32,7 +32,7 @@ layout = go.Layout(
 fig = go.Figure(data=data, layout=layout)
 
 app = dash.Dash(__name__)
-server=app.server()
+server=app.server
 app.layout = html.Div(
     children=[
         html.H1('Finding the top countries that produce the largest number of content titles', style={'text-align': 'center', 'color': 'black'}),
