@@ -33,7 +33,7 @@ layout = go.Layout(
 fig = go.Figure(data=data, layout=layout)
 
 app = dash.Dash(__name__)
-
+server=app.server()
 app.layout = html.Div(
     children=[
         html.H1('Finding the top countries that produce the largest number of content titles', style={'text-align': 'center', 'color': 'black'}),
