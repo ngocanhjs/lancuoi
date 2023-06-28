@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 from dash.dependencies import Input, Output
 
-data = pd.read_csv(r'C:\data.csv') 
+data = pd.read_csv(r'C:\\data.csv') 
 
 df = data['MAIN_PRODUCTION'].value_counts()
 
