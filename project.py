@@ -18,7 +18,7 @@ trace = go.Bar(
     x=df1.values,
     y=df1.index,
     orientation='v',
-    marker=dict(color=['goldenrod','hotpink','chocolate','lawngreen','dodgerblue','darkviolet','plum','forestgreen','crimson'])
+    marker=dict(color=['goldenrod','hotpink','chocolate','lawngreen','dodgerblue','darkviolet','plum','forestgreen','crimson','yellow'])
 )
 
 data = [trace]
