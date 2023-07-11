@@ -36,7 +36,7 @@ layout_bar = go.Layout(
     title='Top 5 countries with the most TV shows (1970-2020)',
     xaxis=dict(title='Main Production'),
     yaxis=dict(title='Number of TV shows'),
-    height=400
+    height=600
 )
 fig_bar = go.Figure(data=data_bar, layout=layout_bar)
 
@@ -101,7 +101,7 @@ app.layout = dbc.Container([
             html.Hr(),
             html.H5('THE MAIN BOX CHART'),
             dcc.Graph(id='plot-box', figure=fig_box, style={'height': 950}),
-        ], width=7),
+        ], width=6),
         dbc.Col([
             html.Hr(),
             html.H5('THE SCATTER PLOT', className='text-center'),
@@ -113,7 +113,7 @@ app.layout = dbc.Container([
                 value="drama"
             ),
             dcc.Graph(id="plot-sub-box"),
-        ], width=6)
+        ], width=5)
     ]),
 ], fluid=True)
 
