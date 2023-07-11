@@ -101,7 +101,7 @@ app.layout = dbc.Container([
         dbc.Col([
             html.Hr(),
             html.H5('THE MAIN BOX CHART'),
-            dcc.Graph(id='plot-box', figure=fig_box, style={'height': 950}),
+            dcc.Graph(id='plot-box', figure=fig_box, style={'height': 500}),
         ], width=7),
         dbc.Col([
             html.Hr(),
