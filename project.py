@@ -42,7 +42,7 @@ fig_bar = go.Figure(data=data_bar, layout=layout_bar)
 
 # Create the box chart
 fig_box = px.box(data, x="MAIN_GENRE", y="SCORE", color="MAIN_GENRE",
-                title="The box chart demonstrates the distribution of range score of TV shows according to TV show genres",
+                title="the distribution of range score of TV shows according to main_genres",
                 color_discrete_map={genre: color for genre, color in zip(data['MAIN_GENRE'].unique(), colors)})
 med_score = data.groupby('MAIN_GENRE')['SCORE'].median().sort_values()
 sorted_genre = med_score.index.tolist()
@@ -75,7 +75,7 @@ app.layout = dbc.Container([
         html.H6("This interactive web application includes a bar chart visualizing the top 5 countries with the highest Netflix TV show production, as well as a box chart displaying the distribution of scores within different genres. Users can interact with the slider and dropdown menu to explore the data.",
                 style={'text-align': 'center', 'color': 'lightblack', 'font-style': 'italic'}),
         html.A('Click here for more information', href='https://www.netflix.com/',
-               style={'text-align': 'center', 'color': '#607D8B','font-style': 'italic','font-size': '14px'}),
+               style={'text-align': 'center', 'color': 'blue','font-style': 'italic','font-size': '14px'}),
     html.Hr(),
     dbc.Row([
         dbc.Col([
