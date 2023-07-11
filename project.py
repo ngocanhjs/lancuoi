@@ -63,7 +63,7 @@ fig_scatter = px.scatter(
     color="MAIN_GENRE",
     title="The scatter plot shows the scores of TV shows by genre",
     color_discrete_map={genre: color for genre, color in zip(data['MAIN_GENRE'].unique(), colors)},
-    height = 800
+    height = 800, width = 9
 )
 fig_scatter.update_layout(height=800)
 # Create the Dash app
@@ -102,7 +102,7 @@ app.layout = dbc.Container([
             html.Hr(),
             html.H5('THE MAIN BOX CHART'),
             dcc.Graph(id='plot-box', figure=fig_box, style={'height': 950}),
-        ], width=6),
+        ], width=7),
         dbc.Col([
             html.Hr(),
             html.H5('THE SCATTER PLOT', className='text-center'),
@@ -114,7 +114,7 @@ app.layout = dbc.Container([
                 value="drama"
             ),
             dcc.Graph(id="plot-sub-box"),
-        ], width=5)
+        ], width=6)
     ]),
 ], fluid=True)
 
