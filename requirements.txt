@@ -1,3 +1,5 @@
-dash == 2.8.1
+dash==2.8.1
 pandas
 gunicorn
+dash_bootstrap_components
+matplotlib
