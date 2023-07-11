@@ -63,7 +63,7 @@ fig_scatter = px.scatter(
     color="MAIN_GENRE",
     title="The scatter plot shows the scores of TV shows by genre",
     color_discrete_map={genre: color for genre, color in zip(data['MAIN_GENRE'].unique(), colors)},
-    height = 800, width = 9
+    height = 800
 )
 fig_scatter.update_layout(height=800)
 # Create the Dash app
