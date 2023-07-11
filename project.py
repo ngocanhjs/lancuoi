@@ -36,7 +36,7 @@ layout_bar = go.Layout(
     title='Top 5 countries with the most TV shows (1970-2020)',
     xaxis=dict(title='Main Production'),
     yaxis=dict(title='Number of TV shows'),
-    height=600
+    height=500
 )
 fig_bar = go.Figure(data=data_bar, layout=layout_bar)
 
@@ -64,7 +64,7 @@ fig_scatter = px.scatter(
     title="The scatter plot shows the scores of TV shows by genre",
     color_discrete_map={genre: color for genre, color in zip(data['MAIN_GENRE'].unique(), colors)}
 )
-
+fig_scatter.update_layout(height=500)
 # Create the Dash app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
