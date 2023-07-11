@@ -77,9 +77,9 @@ app.layout = dbc.Container([
         html.A('Click here for more information', href='https://www.netflix.com/',
                style={'text-align': 'center', 'color': 'blue','font-style': 'italic','font-size': '14px'}),
     html.Hr(),
-    dbc.Row([
+    dbc.Row([html.H2('The Distribution of Main Genre', style={'text-align': 'center', 'color': 'black'}),
+             html.Hr(),
         dbc.Col([
-            html.H2('The Distribution of Main Genre', style={'text-align': 'center', 'color': 'black'}),
             html.Hr(),
             html.H5('THE BAR CHART'),
             html.P('Number of countries:'),
@@ -99,7 +99,7 @@ app.layout = dbc.Container([
         html.H2('The Distribution of Main Genre', style={'text-align': 'center', 'color': 'black'}),
         dbc.Col([
             html.Hr(),
-            html.H5('THE MAIN BOX CHART', style={'text-align': 'center'}),
+            html.H5('THE MAIN BOX CHART'),
             dcc.Graph(id='plot-box', figure=fig_box, style={'height': 950}),
         ], width=7),
         dbc.Col([
