@@ -92,7 +92,8 @@ app.layout = dbc.Container([
             
             html.H4('THE PIE CHART'),
             html.H5('Number of countries:'),
-            html.H6('nfjsfdsgdsgsdgdsgsgsgjghsjkdhsidvmkcvmskgjidgskcmvkjpfoakspfalfm,lcdm,lfkpdfkpflmdlgmdogjwokslgsglsdmglsgmldkgfgkslgmlgmlsgmlsgmslgmslgmwlgmwoegkqeqgq'),
+            html.H5('All the country'),
+            html.H6('nfjsfdsgdsgsdgdsgsgsgjghsjkdhsidvmkcvmskgjidgskcmvkjpfoakspfalfm,lcdm,lfkpdfkpflmdlgmdog'),
             dcc.Graph(id='plot-pie', figure=fig_pie)
         ], md=6)
     ]),
@@ -102,12 +103,13 @@ app.layout = dbc.Container([
         html.Hr(),
         dbc.Col([
             
-            html.H4('THE MAIN BOX CHART'),
+            html.H4('THE BOX CHART'),
+            html.H5('Number of countries:'),
             dcc.Graph(id='plot-box', figure=fig_box, style={'height': 700}),
         ], width=6),
         dbc.Col([
             html.H4('THE SCATTER PLOT'),
-            html.H5('Select genre that you want to see:'),
+            html.H6('Select genre that you want to see:'),
             dcc.Dropdown(
                 id='dropdown',
                 options=[{"label": option, "value": option} for option in data["MAIN_GENRE"].unique()],
