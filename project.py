@@ -51,7 +51,7 @@ fig_box.update_layout(xaxis=dict(categoryorder='array', categoryarray=sorted_gen
 # Create the pie chart
 country_df = data['MAIN_PRODUCTION'].value_counts().reset_index()
 country_df = country_df[country_df['MAIN_PRODUCTION'] / country_df['MAIN_PRODUCTION'].sum() > 0.01]
-fig_pie = px.pie(country_df, values='MAIN_PRODUCTION', names='index', color_discrete_sequence=colors,title="The scatter plot shows the scores of TV shows by genre",)
+fig_pie = px.pie(country_df, values='MAIN_PRODUCTION', names='index',color_discrete_map={production: color for production, color in zip(data['MAIN_PRODUCTION'].unique(), colors)},title="The scatter plot shows the scores of TV shows by genre",)
 fig_pie.update_traces(textposition='inside', textinfo='percent+label', marker=dict(line=dict(color='white', width=1)))
 fig_pie.update_layout(height=500)
 
@@ -101,7 +101,7 @@ app.layout = dbc.Container([
         dbc.Col([
             html.Hr(),
             html.H5('THE MAIN BOX CHART'),
-            dcc.Graph(id='plot-box', figure=fig_box, style={'height': 500}),
+            dcc.Graph(id='plot-box', figure=fig_box, style={'height': 700}),
         ], width=5),
         dbc.Col([
             html.Hr(),
