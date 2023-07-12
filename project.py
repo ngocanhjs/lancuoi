@@ -51,7 +51,7 @@ fig_box.update_layout(xaxis=dict(categoryorder='array', categoryarray=sorted_gen
 # Create the pie chart
 country_df = data['MAIN_PRODUCTION'].value_counts().reset_index()
 country_df = country_df[country_df['MAIN_PRODUCTION'] / country_df['MAIN_PRODUCTION'].sum() > 0.01]
-fig_pie = px.pie(country_df, values='MAIN_PRODUCTION', names='index',color_discrete_map={production: color for production, color in zip(data['MAIN_PRODUCTION'].unique(), colors)},title="The scatter plot shows the scores of TV shows by genre",)
+fig_pie = px.pie(country_df, values='MAIN_PRODUCTION', names='index',color_discrete_sequence=colors,title="The scatter plot shows the scores of TV shows by genre",)
 fig_pie.update_traces(textposition='inside', textinfo='percent+label', marker=dict(line=dict(color='white', width=1)))
 fig_pie.update_layout(height=500)
 
@@ -77,8 +77,9 @@ app.layout = dbc.Container([
                 style={'text-align': 'center', 'color': 'lightblack', 'font-style': 'italic'}),
         html.A('Click here for more information', href='https://www.netflix.com/',
                style={'text-align': 'center', 'color': 'blue','font-style': 'italic','font-size': '14px'}),
-    html.Hr(),
-    dbc.Row([html.H2('The Distribution of Main Genre', style={'text-align': 'center', 'color': 'black'}),
+   
+    dbc.Row([ html.Hr(),
+        html.H2('The Distribution of Main Genre', style={'text-align': 'center', 'color': 'black'}),
              html.Hr(),
         dbc.Col([
             
@@ -98,16 +99,17 @@ app.layout = dbc.Container([
     html.Hr(),
     dbc.Row([
         html.H2('The Distribution of Main Genre', style={'text-align': 'center', 'color': 'black'}),
+        html.Hr(),
         dbc.Col([
-            html.Hr(),
+            
             html.H5('THE MAIN BOX CHART'),
             dcc.Graph(id='plot-box', figure=fig_box, style={'height': 700}),
-        ], width=5),
+        ], width=6),
         dbc.Col([
             html.Hr(),
-            html.H5('THE SCATTER PLOT', className='text-center'),
+            html.H5('THE SCATTER PLOT'),
             html.Hr(),
-            html.H6('Select genre that you want to see:', className='text-center'),
+            html.H6('Select genre that you want to see:'),
             dcc.Dropdown(
                 id='dropdown',
                 options=[{"label": option, "value": option} for option in data["MAIN_GENRE"].unique()],
