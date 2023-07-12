@@ -91,8 +91,8 @@ app.layout = dbc.Container([
         dbc.Col([
             
             html.H5('THE PIE CHART'),
-            html.P('Number of countries:'),
-            html.H6('nfj'),
+            html.H6('Number of countries:'),
+            html.H7('nfjsfdsgdsgsdgdsgsgsgjghsjkdhsidvmkcvmskgjidgskcmvkjpfoakspfalfm,lcdm,lfkpdfkpflmdlgmdogjwokslgsglsdmglsgmldkgfgkslgmlgmlsgmlsgmslgmslgmwlgmwoegkqeqgq'),
             dcc.Graph(id='plot-pie', figure=fig_pie)
         ], md=6)
     ]),
@@ -106,9 +106,7 @@ app.layout = dbc.Container([
             dcc.Graph(id='plot-box', figure=fig_box, style={'height': 700}),
         ], width=6),
         dbc.Col([
-            html.Hr(),
             html.H5('THE SCATTER PLOT'),
-            html.Hr(),
             html.H6('Select genre that you want to see:'),
             dcc.Dropdown(
                 id='dropdown',
@@ -116,7 +114,7 @@ app.layout = dbc.Container([
                 value="drama"
             ),
             dcc.Graph(id="plot-sub-box", style={'height': 700}),
-        ], width=5)
+        ], width=6)
     ]),
 ], fluid=True)
 
